@@ -1,11 +1,11 @@
 Lab 3 - Plastic Waste
 ================
 DSC 200 - Data Science I
-2021-02-06
+2021-02-15
 
-Student Name:
+Student Name:Ruyof mohammed
 
-Student ID:
+Student ID:2201003185
 
 ``` r
 library(tidyverse)
@@ -102,7 +102,7 @@ ggplot(data = plastic_waste,
        mapping = aes(x = plastic_waste_per_cap, 
                      color = continent, 
                      fill = continent)) +
-  geom_density(alpha = 0.7)
+  geom_density(alpha = 0.1)
 ```
 
 This still doesn’t look great…
@@ -115,7 +115,7 @@ E3. Describe why we defined the `color` and `fill` of the curves by
 mapping aesthetics of the plot but we defined the `alpha` level as a
 characteristic of the plotting geom.
 
-Answer here:
+Answer here:Because with the previous step, we used colors
 
 *Now is a good time to knit your document and commit and push your
 changes to GitHub with an appropriate commit message. Make sure to
