@@ -1,7 +1,7 @@
 Lab 3 - Plastic Waste
 ================
 DSC 200 - Data Science I
-2021-02-15
+2021-02-18
 
 Student Name:Ruyof mohammed
 
@@ -115,7 +115,12 @@ E3. Describe why we defined the `color` and `fill` of the curves by
 mapping aesthetics of the plot but we defined the `alpha` level as a
 characteristic of the plotting geom.
 
-Answer here:Because with the previous step, we used colors
+Answer here:these aesthetics parameters change the colour (colour and
+fill )and the opacity (alpha)of geom elements on a plot . almost every
+geom has either colour or fill (or both), as well as can have their
+alpha modified . modified colour on a plot is a useful way to enhance
+the presentation of data , often especially when a plot graphs more than
+two variables .
 
 *Now is a good time to knit your document and commit and push your
 changes to GitHub with an appropriate commit message. Make sure to
@@ -137,16 +142,44 @@ E4. Convert your side-by-side box plots from the previous task to
 What do the violin plots reveal that box plots do not? What features are
 apparent in the box plots but not in the violin plots?
 
+``` r
+ggplot(data = plastic_waste,
+mapping = aes(x = continent,
+y = plastic_waste_per_cap)) +
+  geom_violin()
+```
+
+answer : box plots provide a coarser summary of the data, provide more
+of a summary of a distribution can also be seen as an advantage in
+certain cases . also the point in the graph or mapping it is most
+clearly than violin plots .
+
 **Remember:** We use `geom_point()` to make scatterplots.
 
 E5. Visualize the relationship between plastic waste per capita and
 mismanaged plastic waste per capita using a scatterplot. Describe the
 relationship.
 
+``` r
+ggplot(data = plastic_waste,
+mapping = aes(x = mismanaged_plastic_waste_per_cap,
+y = plastic_waste_per_cap)) +
+geom_point()
+```
+
+answer : the relationship is positive .
+
 E6. Colour the points in the scatterplot by continent. Does there seem
 to be any clear distinctions between continents with respect to how
 plastic waste per capita and mismanaged plastic waste per capita are
 associated?
+
+``` r
+ggplot(data = plastic_waste,
+mapping = aes(x = plastic_waste_per_cap,
+color = continent)) +
+geom_density()
+```
 
 E7. Visualize the relationship between plastic waste per capita and
 total population as well as plastic waste per capita and coastal
@@ -172,7 +205,7 @@ use](https://ggplot2.tidyverse.org/reference/index.html#section-geoms).
 E8. Recreate the following plot, and interpret what you see in context
 of the data.
 
-![](lab-3-plastic-waste_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](lab-3-plastic-waste_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 Knit, *commit (with an appropriate message), and push your changes to
 GitHub with an appropriate commit message. Make sure to commit and push
