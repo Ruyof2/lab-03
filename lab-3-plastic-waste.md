@@ -221,6 +221,26 @@ of the data.
 
 ![](lab-3-plastic-waste_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
+``` r
+plastic_waste %>% 
+  mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
+  filter(plastic_waste_per_cap < 3) %>%
+  ggplot(aes(x = coastal_pop_prop, y = plastic_waste_per_cap, color = continent)) + 
+    geom_point() +
+    geom_smooth(color = "black",method = "glm") +
+    scale_color_viridis_d() +
+    labs(x = "Coastal population proportion (Coastal / total population)", 
+         y = "Plastic waste per capita ", 
+         color = "Continent",
+         title = "Plastic waste vs. coastal population proportion",
+         subtitle = "by continent") +
+    theme_minimal()
+```
+
+answer : gemo\_smooth (Aids the eye in seeing patterns in the presence
+of overplotting also it is help us to do see the curve of the dataand
+analyis it via a different way)
+
 Knit, *commit (with an appropriate message), and push your changes to
 GitHub with an appropriate commit message. Make sure to commit and push
 all changed files so that your Git pane is cleared up afterwards and
