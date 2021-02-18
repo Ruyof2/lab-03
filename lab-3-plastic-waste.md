@@ -176,10 +176,12 @@ associated?
 
 ``` r
 ggplot(data = plastic_waste,
-mapping = aes(x = plastic_waste_per_cap,
-color = continent)) +
-geom_density()
++        mapping = aes(x = mismanaged_plastic_waste_per_cap,color = continent, fill = continent , y = plastic_waste_per_cap)) +
++     geom_point()
 ```
+
+answer : Europe (positive) relationship , Africa is the most
+(mismanged\_plasti\_watse\_per\_cap)
 
 E7. Visualize the relationship between plastic waste per capita and
 total population as well as plastic waste per capita and coastal
